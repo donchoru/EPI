@@ -3,6 +3,7 @@ import gspread
 import pandas as pd
 import excel_function as ef
 import data_object as do
+import gspread_dataframe as gd
 
 scope = ['https://spreadsheets.google.com/feeds',
          'https://www.googleapis.com/auth/drive']
@@ -36,3 +37,8 @@ for idx, row in master_data.iterrows():
             else:
                 data_dic[idx] = {row_idx:value}
         row_idx += 1
+
+for function in need_function:
+    function.run()
+
+
